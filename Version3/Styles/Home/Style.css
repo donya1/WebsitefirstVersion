@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+body {
+	font-family: "Open Sans";
+	overflow-x:hidden;
+}
+
+.introContainer {
+	width:100vw;
+	height:100vh;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:#1e0228;
+	color:white;
+	animation:FadeIn 1s ease-in-out;
+}
+
+.introContainer h1 {
+	font-family: "Fira Sans";
+	font-size:3.6rem;
+	width:1000px;
+	text-align:center;
+	position:relative;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	letter-spacing: 0px;
+	line-height:1.4;
+	animation:FadeIn 4s ease-in-out;
+}
+
+@keyframes FadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+button {
+	font-size:15px;
+	font-family: "Fira Sans";
+	background-color:transparent;
+	color:white;
+	border: 1px solid white;
+	padding:10px;
+	width:120px;
+	height:40px;
+	position:relative;
+	top:50vh;
+	left:50%;
+	transform:translateX(-50%);
+	text-align:center;
+	margin:auto;
+	animation:FadeIn 4s ease-in-out;
+	cursor:pointer;
+}
+
+.Content {
+	margin-top:100vh;
+	width:100vw;
+}
+
+.ConWrap {
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 6fr 10fr;
+	grid-gap:4em;
+	grid-template-areas: 
+		"main main main main main"
+		"side con con con .";
+}
+
+.Title {
+	background: url("Images/Splash.png") no-repeat fixed center;
+	background-size: 1500px;
+	background-position: 0% 90%;
+	grid-area: main;
+}
+
+.TiTag {
+	position:relative;
+	left:80px;
+	height:510px;
+	width:710px;
+}
+
+.Logo {
+	transform: scale(0.35);
+	position:relative;
+	left:-260px;
+	top:-120px;
+}
+
+.Title h1 {
+	width: 530px;
+	font-size:3.5rem;
+	font-weight: 700;
+	text-transform:uppercase;
+	color: rgb(47,28,58);
+	line-height:1.15;
+	margin:0;
+	padding:0;
+	letter-spacing:-1px;
+	position:relative;
+	top:-560px;
+	left:176px;
+}
+
+.Title h2 {
+	font-size:2rem;
+	font-weight: 600;
+	color:rgb(96,8,62);
+	font-style:italic;
+	margin:0;
+	padding:0;
+	position:relative;
+	top:-554px;
+	left:177px;
+}
+
+.nav {
+	font-size:17px;
+	text-transform:uppercase;
+	font-weight:600;
+	height:771px;
+	grid-area:side;
+	margin-left:100px;
+}
+
+.stick {
+	position:sticky;
+	top:50px;
+}
+
+a {
+	color:gray;
+	text-decoration:none;
+}
+
+.nav a:hover{
+	text-decoration:none;
+	cursor:pointer;
+	color:rgb(96,8,62);
+}
+
+.nav ul {
+	list-style-type: none;
+}
+
+.nav li {
+	padding:10px;
+}
+
+.nav .current {
+	color:rgba(96,8,62);
+}
+
+.TwitterFeed {
+	width:240px;
+	padding-top:30px;
+}
+
+.twitter-timeline {
+	max-width:200px;
+	max-height:400px;
+}
+
+.writeUp {
+	line-height:1.8;
+	font-size:18px;
+	grid-area: con;
+}
+
+.writeUp p{
+	padding-bottom:2%;
+}
+
+table {
+	width:630px;
+	font-size:14px;
+	text-align:left;
+}
+
+.date {
+	width:80px;
+}
+
+.Name {
+	width:490px;
+}
+
+table, th, td {
+	margin-top:18px;
+	margin-bottom:18px;
+	border-collapse: collapse;
+
+}
+
+th, td {
+	padding:3px;
+}
+
+tr:nth-child(3) {
+	border-top:1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+
+}
+
+th {
+	font-weight:400;
+	font-style:italic;
+}
+
+td {
+	font-weight:400;
+	font-style:italic;
+}
+
+caption {
+	font-size:15px;
+	font-weight:600;
+	text-align:left;
+}
+
+.footer {
+	width:100%;
+	height:330px;
+
+}
+
+hr {
+	width:80%;
+	margin:auto;
+}
+
+.Logos {
+	display:flex;
+	flex-flow: row wrap;
+	justify-content:space-evenly;
+}
+
+.Logopic {
+	width:200px;
+	height:100px;
+	margin:30px;
+
+}
+
+.Logos img {
+	max-width:100%;
+	max-height:100%;
+	display:block;
+	margin:0 auto;
+}
+
+.bottomNav {
+	display:flex;
+	justify-content:flex-start;
+	flex-direction:column;
+	padding:40px;
+}
+
+.bottomNav ul {
+	list-style-type: none;
+	margin:auto;
+
+}
+
+.bottomNav li {
+	float:left;
+	display:block;
+	text-align:center;
+	font-size:12px;
+	font-weight:400;
+	padding-right:50px;
+	padding-left:50px;
+}
+
+.Liscense {
+	text-align:center;
+	width:100vw;
+	font-size:10px;
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:row;
+	justify-content:center;
+	line-height:1.4;
+}
+
+.Liscense-Image {
+	width:100px;
+	margin:auto;
+	transform:scale(0.5);
+}
+
+@media only screen and (max-width: 600px) {
+	.introContainer h1 {
+		font-size:18px;
+		width:250px;
+		line-height:1.6;
+	}
+
+
+	.Title {
+		height:220px;
+		background-size:250%;
+		background-position:80% 20%;
+	}
+
+	.Logo {
+		transform:scale(0.15);
+		top:-262px;
+		left:-330px;
+	}
+
+	.TiTag{
+		top:-10px;
+		left:40px;
+	}
+
+	.TiTag h1{
+		width:240px;
+		font-size:18px;
+		left:100px;
+		top:-670px;
+
+	}
+
+	.TiTag h2{
+		font-size:12px;
+		left:103px;
+		top:-663px;
+		width:260px;
+	}
+
+	.ConWrap {
+		grid-template-columns:1fr;
+		grid-template-rows: 0.2fr 1fr;
+		grid-gap:1em;
+		grid-template-areas: 
+			"main"
+			"con";
+	}
+
+	.nav {
+		display:none;
+	}
+
+	.writeUp {
+		font-size:12px;
+		padding:10px;
+		margin: 0 300px 0 100px;
+	}
+
+	table {
+		width:290px;
+		font-size:12px;
+		margin:auto;
+		margin-top:20px;
+	}
+
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+	.introContainer h1 {
+		font-size:40px;
+		width:600px;
+		line-height:1.4;
+	}
+
+
+	.ConWrap {
+		grid-template-columns:1fr 1fr;
+		grid-template-rows: 0.2fr 1fr;
+		grid-row-gap:1em;
+		grid-template-areas: 
+			"main main"
+			"con con";
+	}
+
+	.Logo {
+		margin:auto;
+		top:-230px;
+		left:-290px;
+		transform:scale(0.3);
+	}
+
+	.Title {
+		height:300px;
+		background-size:250%;
+		background-position:80% 20%;
+	}
+
+	.TiTag{
+		top:-10px;
+		left:40px;
+	}
+
+	.TiTag h1{
+		width:420px;
+		font-size:35px;
+		left:140px;
+		top:-660px;
+
+	}
+
+	.TiTag h2{
+		font-size:20px;
+		left:142px;
+		top:-649px;
+		width:420px;
+	}
+
+	.nav {
+		display:none;
+	}
+
+	.writeUp {
+		font-size:14px;
+		padding:10px 90px;
+		margin:10px 10px 10px 10px;
+	}
+
+	table {
+		margin:auto;
+		font-size:12px;
+		width:350px;
+		margin:20px;
+	}
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 920px) {
+	.introContainer h1 {
+		font-size:55px;
+		width:700px;
+		line-height:1.2;
+	}
+
+
+	.ConWrap {
+		grid-template-columns:1fr 1fr 1fr;
+		grid-template-rows: 0.2fr 1fr;
+		grid-gap:1em;
+		grid-template-areas: 
+			"main main main"
+			"con con con";
+	}
+
+	.Logo {
+		margin:auto;
+		top:-220px;
+		left:-330px;
+	}
+
+	.Title {
+		height:300px;
+		background-size:250%;
+		background-position:80% 20%;
+	}
+
+	.TiTag{
+		top:-10px;
+		left:40px;
+	}
+
+	.TiTag h1{
+		width:420px;
+		font-size:45px;
+		left:110px;
+		top:-660px;
+
+	}
+
+	.TiTag h2{
+		font-size:25px;
+		left:110px;
+		top:-649px;
+		width:420px;
+	}
+
+	.nav {
+		display:none;
+	}
+
+	.writeUp {
+		font-size:18px;
+		padding:10px;
+		margin:20px 100px 20px 100px;
+	}
+
+	table {
+		margin:auto;
+		font-size:12px;
+		width:400px;
+		margin-top:20px;
+	}
+
+}
+
+@media only screen and (min-width: 921px) and (max-width: 991px) {
+	.introContainer h1 {
+		font-size:55px;
+		width:850px;
+		line-height:1.3;
+	}
+}
+
+@media only screen and (min-width: 921px) and (max-width: 1273px) {
+	table {
+		margin:auto;
+		font-size:12px;
+		width:400px;
+		margin-top:20px;
+		margin-bottom:20px;
+	}
+}
+
+@media only screen and (min-width: 1274px) and (max-width: 1920px) {
+
+	.ConWrap {
+		grid-gap:6em;
+	}
+
+	.writeUp {
+		font-size:25px;
+	}
+
+	.Logo {
+		transform:scale(0.5);
+		top:-120px;
+		left:-110px;
+	}
+
+	.Title {
+		background-size:1920px;
+	}
+
+	.TiTag h1{
+		width:700px;
+		font-size:4.5rem;
+		left:336px;
+		top:-560px;
+
+	}
+
+	.TiTag h2{
+		font-size:3rem;
+		left:337px;
+		top:-554px;
+		width:810px;
+	}
+
+	.writeUp {
+		font-size:25px;
+	}
+
+	table {
+		margin-top:28px;
+		margin-bottom:28px;
+		width:830px;
+		font-size:24px;
+	}
+
+	caption {
+		font-size:25px;
+	}
+
+
+}
+
+
