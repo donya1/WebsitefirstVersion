@@ -1,4 +1,5 @@
 $('#explore').click(function() {
+  $('body').removeClass('hidden');
   $([document.documentElement, document.body]).animate({
     scrollTop: $(".Content").offset().top 
   }, 2000);

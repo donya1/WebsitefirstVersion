@@ -13,6 +13,10 @@ body {
 	overflow-x:hidden;
 }
 
+.hidden {
+	overflow:hidden;
+}
+
 .introContainer {
 	width:100vw;
 	height:100vh;
@@ -306,7 +310,7 @@ hr {
 		width:250px;
 		line-height:1.6;
 	}
-
+ß
 
 	.Title {
 		height:220px;
@@ -341,12 +345,12 @@ hr {
 	}
 
 	.ConWrap {
-		grid-template-columns:1fr;
+		grid-template-columns:1fr 1fr;
 		grid-template-rows: 0.2fr 1fr;
 		grid-gap:1em;
 		grid-template-areas: 
-			"main"
-			"con";
+			"main main"
+			"con con";
 	}
 
 	.nav {
@@ -356,7 +360,7 @@ hr {
 	.writeUp {
 		font-size:12px;
 		padding:10px;
-		margin: 0 300px 0 100px;
+		margin: 10px;
 	}
 
 	table {
