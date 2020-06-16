@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+body {
+	overflow-x:hidden;
+}
+
+nav {
+	position:fixed;
+	width:100vw;
+	height:40px;
+	background-color:rgb(47,28,58);
+	font-family:"Open Sans";
+	z-index:1;
+}
+
+nav li{
+	font-family: "open sans";
+	float:left;
+	display:block;
+	padding:10px 20px 0px 20px;
+	letter-spacing:0.04em;
+}
+
+.lang{
+	float:right;
+	display:block;
+	font-weight:700;
+	color:lightgray;
+	cursor:default;
+	padding-right:35px;
+}
+
+nav a {
+	text-decoration:none;
+	text-align:center;
+	color:lightgray;
+	font-weight:400;
+
+}
+
+nav a:hover{
+	font-weight:700;
+
+}
+
+.current {
+	font-weight:700;
+}
+
+.content {
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr 1fr;
+	grid-gap:1em;
+	grid-template-areas: 
+		"img main main .";
+}
+
+img {
+	padding:80px 0px 0px 20px;
+	grid-area:img;
+	transform:scale(0.7)
+}
+
+h1 {
+	padding-top:50px;
+	font-family:"Open Sans";
+	color: rgb(47,28,58);
+	font-size:2em;
+	padding-bottom:50px;
+	text-transform:uppercase;
+}
+
+h2 {
+	font-family:"Open Sans";
+	color:rgb(96,8,62);
+	font-size:1.2em;
+	padding:10px 0px 30px 0px;
+	font-style:italic;
+}
+
+footer {
+	width:100%;
+	padding:50px 0px 50px 0px;
+}
+
+footer a {
+	text-decoration:none;
+	color:gray;
+}
+
+hr {
+	width:80%;
+	margin:auto;
+}
+
+.bottomNav {
+	display:flex;
+	justify-content:flex-start;
+	flex-direction:column;
+	padding:40px;
+}
+
+.bottomNav ul {
+	list-style-type: none;
+	margin:auto;
+
+}
+
+.bottomNav li {
+	font-family:"Open Sans";
+	float:left;
+	display:block;
+	text-align:center;
+	font-size:12px;
+	font-weight:400;
+	padding-right:50px;
+	padding-left:50px;
+}
