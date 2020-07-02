@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Points on a map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .mapboxgl-popup {
+        font: sans-serif;
+        font-size:11px;
+      }
+
+      .mapboxgl-popup h4{
+        font-style:italic;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id='map'></div>
+});
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZG9ueWFhYSIsImEiOiJja2FmcHVzMjUwMHl1MnJyOGJjZ3d1ZDN2In0.Xpcbdw2ReubEMhFvbYn_7w'; // replace this with your access token
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/light-v10', // replace this with your style URL
+      center: [-95.750596, 56.585901],
+      zoom: 3
+    });
+
+
+    map.on('load', () => {
+      map.addSource('Laws' ,{
+        'type': 'geojson',
+        'data': 'https://donya1.github.io/WebsitefirstVersion/GeojsonData/LawData.geojson',
+        'cluster': true,
+        'clusterMaxZoom':14, 
+        'clusterRadius':50
+      });
+
+      map.addLayer({
+        'id':'clusters',
+        'type':'circle',
+        'source':'Laws',
+        'filter':['has', 'point_count'],
+        'paint': {
+          'circle-color':[
+            'step',
+            ['get', 'point_count'],
+            '#51bbd6',
+            5,
+            '#f1f075',
+            20,
+            '#f28cb1'
+          ],
+          'circle-radius':[
+            'step',
+            ['get', 'point_count'],
+            20,
+            5,
+            30,
+            20,
+            40
+          ]
+        }
+      });
+
+      map.addLayer({
+        'id':'cluster-count',
+        'type':'symbol',
+        'source':'Laws',
+        'filter':['has', 'point_count'],
+        'layout': {
+            'text-field': '{point_count_abbreviated}',
+            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+            'text-size': 12
+        }
+      });
+
+      map.addLayer({
+        'id':'unclustered-point',
+        'type':'circle',
+        'source':'Laws',
+        'filter': ['!', ['has', 'point_count']],
+        'paint': {
+          'circle-color': '#11b4da',
+          'circle-radius':4,
+          'circle-stroke-width':1,
+          'circle-stroke-color': '#fff'
+        }
+      });
+
+      //inspect a cluster on click
+      map.on('click', 'clusters', function(e) {
+        var features = map.queryRenderedFeatures(e.point, {
+          layers: ['clusters']
+        });
+        var clusterId = features[0].properties.cluster_id;
+        map.getSource('Laws').getClusterExpansionZoom(
+          clusterId,
+          function(err, zoom) {
+            if (err) return;
+
+            map.easeTo({
+              center: features[0].geometry.coordinates,
+              zoom:zoom
+            });
+
+          });
+      });
+
+      //when click on a unclustered-point, open pop-up at the location of feature with HTML description from its properties
+      map.on('click', 'unclustered-point', function(e){
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var City = e.features[0].properties.City;
+        var OT = e.features[0].properties.OffenceType;
+        var Law = e.features[0].properties.LawName;
+
+      while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+
+      new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(coordinates)
+        .setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        .addTo(map);
+    });
+
+      map.on('mouseenter', 'clusters', function() {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+      map.on('mouseleave', 'clusters', function(){
+        map.getCanvas().style.cursor = '';
+      });
+
+    });
+    </script>
+  </body>
+</html>
