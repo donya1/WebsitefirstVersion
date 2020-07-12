@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Filter symbols by toggling a list</title>
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+	<link rel="stylesheet" href="Styles/Research/Research.css">
+</head>
+<body>
+	<style>
+
+		#map {
+        	width: 100%;
+        	position:absolute;
+        	top:40px;
+        	left:0px;
+        	height:80%;
+    }
+
+		#menu {
+			background: #cbd2d3;
+			position: absolute;
+			z-index: 1;
+			top: 50px;
+			left: 10px;
+			border-radius: 3px;
+			width: 200px;
+			border: 1px solid rgba(0, 0, 0, 0.4);
+			font-family: 'Open Sans', sans-serif;
+			box-shadow:2px 2px 2px #b1b1b1;
+		}
+ 
+		#menu a {
+			font-size: 13px;
+			color: #b1b1b1;
+			display: block;
+			margin: 0;
+			padding: 0;
+			padding: 10px;
+			text-decoration: none;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+			text-align: center;
+		}
+ 
+		#menu a:last-child {
+			border: none;
+		}
+ 
+		#menu a:hover {
+			background-color: #ffffff;
+			color: #404040;
+		}
+ 
+		#menu a.active {
+			background-color: #f1f3f1;
+			color: #404040;
+		}
+ 
+		#menu a.active:hover {
+			background: #cbd2d3;
+			color: #b1b1b1;
+		}
+
+		#legend {
+			position:relative;
+			top:50px;
+			left:10px;
+			width:332px;
+			height:159px;
+			background-color:#f1f3f1;
+			border-radius: 3px;
+			border: 1px solid rgba(0, 0, 0, 0.4);
+			box-shadow:2px 2px 2px #b1b1b1;
+      z-index:3;
+		}
+
+		#Con {
+			position:absolute;
+			bottom:0px;
+			left:10px;
+			padding:5px;
+			font-family:'Open Sans';
+			font-size:12px;
+      line-height:1.3;
+		}
+
+		.colorBox {
+			width:10px;
+			height:10px;
+			margin-bottom:10px;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+		}
+
+		.label {
+			float:left;
+			margin-top:-22px;
+			margin-left:17px;
+      width:290px;
+		}
+
+		#panBox {
+			background-color:#a6cee3;
+		}
+
+		#obsBox {
+			background-color:#1f78b4;
+		}
+
+		#disBox {
+			background-color:#b2df8a;
+		}
+
+		#shltBox {
+			background-color:#33a02c;
+		}
+
+		#salBox {
+			background-color:#fb9a99;
+		}
+
+		#loiBox {
+			background-color:#e31a1c;
+		}
+
+		#sitBox {
+			background-color:#fdbf6f;
+		}
+
+    .mobileLegend {
+      width:60px;
+      height:25px;
+      background: #f1f3f1;
+      z-index:3;
+      position:absolute;
+      top:400px;
+      left:10px;
+      border-radius:2px;
+      display:none;
+      font-family:Open Sans;
+    }
+
+    .mobileLegend p{
+      margin:auto;
+    }
+
+@media only screen and (max-width: 1279px) {
+
+    .mobileLegend {
+      display:block;
+    }
+}
+
+@media only screen and (min-width: 1279px) and (max-width: 1499px) {
+
+    #legend {
+      display:block;
+      top:420px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    #legend {
+        top:420px;
+        right:-10px;
+
+    }
+}
+
+
+	</style>
+
+	<nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="current" href="Research.html">Research</a></li>
+        <li><a href="OurTeam.html">Our Team</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+      <ul class="lang">
+        <li><a href="#" language='english' class='active' id="Eng">EN</a></li>
+        <li><a href="#" language='french'>FR</a></li>
+      </ul>
+    </nav>
+	
+	<div class="mapParts">
+
+		<div id="map"></div>
+
+		<div id="menu"></div>
+
+		<div id="legend">
+			<div id="Con">
+				<div id="pan"><div class="colorBox" id="panBox"></div><p class="label">Panhandling/Mendier</p></div>
+				<div id="obs"><div class="colorBox" id="obsBox"></div><p class="label">Obstructing/Provoquer une Obstruction</p></div>
+				<div id="dis"><div class="colorBox" id="disBox"></div><p class="label">Disorder/Occasionner des Troubles</p></div>
+				<div id="shlt"><div class="colorBox" id="shltBox"></div><p class="label">Sheltering/Construire un Abri de Fortune</p></div>
+				<div id="sal"><div class="colorBox" id="salBox"></div><p class="label">Salvaging/R&eacute;cup&eacute;rer et R&eacute;utiliser des D&eacute;chets</p></div>
+				<div id="loi"><div class="colorBox" id="loiBox"></div><p class="label">Loitering/Fl&acirc;ner</p></div>
+				<div id="sit"><div class="colorBox" id="sitBox"></div><p class="label">Resting or Sleeping/Se Reposer ou S'allonger au Sol</p></div>
+			</div>
+		</div>
+
+     <button class="mobileLegend">Legend</button>
+
+	</div>
+
+
+
+	<div class="content">
+      <div class= "caption"><h2>Anti-Vagrancy Laws Across Canada by Offence Type:<span class='capDes'>&nbsp; Anti-vagrancy laws are mapped according to the type of offence/behaviour they criminalize. Filter laws based on offence type using menu on top-left side. Click on individual circles to explore law name and location.</span></h2></div>
+
+    <div class="mapMenu">
+      <h1>Mapping Visualizations</h1>
+      <ul>
+        <li><a href="mapOne.html">by the Numbers</a></li>
+        <li><a class="current" href="mapTwo.html">by Offence Type</a></li>
+        <li><a href="mapThree.html">by Behaviours Criminalized</a></li>
+      </ul>
+    </div>
+    <div class="writeUp">
+
+      <p class="par1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum gravida iaculis. In aliquam metus et nunc finibus, a viverra purus ultrices. Nullam sollicitudin mauris eu risus finibus volutpat eu in ex. Vestibulum interdum elit ex, eu facilisis justo fermentum eget. Donec purus libero, hendrerit sed lectus id, mattis mollis quam. Duis pellentesque dui ut arcu hendrerit accumsan. Suspendisse id sapien nec purus elementum elementum interdum eu neque. Integer mauris turpis, sagittis nec metus ac, faucibus ullamcorper tortor. Suspendisse molestie id eros eu efficitur. Fusce congue vestibulum lectus, eu rhoncus nibh mollis vitae. Sed non sodales tortor, sed condimentum magna. Aliquam at viverra nisl, at tincidunt eros. Pellentesque dapibus nisi dui, sit amet viverra est ornare vitae. Quisque imperdiet lacus eget neque auctor aliquet. In interdum auctor nisi, quis tristique nulla.</p>
+
+      <p class="par2">Fusce at sapien id erat rutrum dictum id nec tellus. Nam urna erat, volutpat eget lectus ut, porttitor condimentum lacus. Aliquam id vehicula leo, at porta nisl. Aliquam efficitur feugiat dui, nec ultricies sem. Ut interdum iaculis ultrices. Maecenas sed porttitor nisl, in suscipit nulla. Vestibulum auctor, purus accumsan vehicula efficitur, quam mi egestas sapien, ut congue urna ipsum at metus. Phasellus tristique luctus lacus at sodales. Morbi fringilla tortor non finibus elementum. Maecenas porttitor tincidunt cursus. Quisque felis nulla, efficitur tempus consectetur sit amet, lacinia vitae dolor. In bibendum elit quis lorem luctus pulvinar. Phasellus velit neque, eleifend eget volutpat eu, porttitor nec orci.</p>
+
+      <p class="par3">Vivamus vitae ante posuere velit lobortis accumsan. Maecenas placerat posuere dignissim. Aliquam molestie luctus justo vitae maximus. Duis posuere tellus sapien, vel tincidunt libero tempor in. Suspendisse at odio sed nibh ornare pharetra fringilla eget augue. Curabitur ultricies laoreet faucibus. Curabitur vel vehicula magna. Aliquam erat volutpat. Phasellus a enim vitae quam semper fermentum quis efficitur velit. Vivamus vitae porta lorem, nec maximus leo. Suspendisse eleifend nisl quam, nec posuere nibh auctor ac. Aenean sit amet vehicula dolor. Morbi eleifend arcu vel sem euismod, eu vestibulum dolor congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi vel odio sit amet tellus malesuada aliquet.</p>
+
+      <p class="par4">Fusce ornare bibendum odio ac consectetur. Nulla mattis aliquet scelerisque. Vivamus tempor leo et ligula vehicula, quis pretium risus vestibulum. Nullam commodo rhoncus massa, ac egestas magna accumsan vel. Pellentesque ac fringilla elit. Curabitur auctor eros nec felis suscipit, ac imperdiet leo blandit. Nunc porttitor rhoncus bibendum. Morbi ut varius ante. Sed vel tincidunt lacus. Curabitur ut ornare lectus. In egestas dictum erat, ac vulputate justo fringilla id. Cras lacinia dui urna, sit amet laoreet lacus dapibus vitae. Curabitur cursus eleifend elit eu imperdiet. Duis et rutrum diam.</p>
+
+      <p class="par5">Curabitur eget ipsum hendrerit, finibus dui ac, iaculis odio. Donec ac fringilla nisl, in bibendum dolor. Phasellus quis nibh lorem. Nulla eu tempor elit. Donec ipsum diam, fringilla at eleifend eu, mattis quis leo. Curabitur ipsum ipsum, mollis at nisl a, rutrum bibendum dui. Pellentesque vel ante ante. In quis mattis ipsum, vel condimentum urna. Sed et mattis tortor, quis fermentum velit.</p>
+
+      <p class="par6">Integer mattis nisl sed arcu convallis varius. Vivamus ut leo ultricies, placerat ligula quis, porta arcu. Quisque laoreet cursus lectus, in accumsan arcu mattis sit amet. Donec efficitur mauris erat, at lobortis diam accumsan a. Suspendisse a dui varius, egestas ex nec, ullamcorper ex. Aliquam fermentum risus massa, eget molestie ligula suscipit non. Vestibulum auctor ante tellus, nec sollicitudin enim imperdiet sed. Donec quis arcu pulvinar, congue mauris quis, ultrices sapien. Nullam ornare dignissim vehicula. In hac habitasse platea dictumst. Donec faucibus metus quis ligula rhoncus, at luctus ligula lobortis.</p>
+
+      <p class="par7">In hac habitasse platea dictumst. Mauris ac turpis blandit, lobortis ex vitae, faucibus odio. Sed diam eros, volutpat ut egestas nec, varius in nisi. Nunc a dapibus sem, quis sodales massa. Pellentesque venenatis cursus vestibulum. Cras placerat, dolor vel laoreet scelerisque, nisl est dictum dolor, a hendrerit tellus ex a augue. Vestibulum maximus urna ut nisl blandit semper. Vivamus vulputate aliquet nisl, sed lobortis sapien pharetra sit amet. Ut mattis justo id nisi convallis tristique. Phasellus commodo est in neque dictum pellentesque. Etiam condimentum purus vel velit dictum volutpat aliquam ut libero.</p>
+
+      <p class="par8">In et dignissim lorem. Nullam turpis arcu, egestas non convallis consectetur, elementum vel velit. Aenean id nunc at sem condimentum elementum. Fusce dapibus.</p>
+
+    </div>
+
+    <footer>
+      <hr>
+
+      <div class=bottomNav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Research.html">Research</a></li>
+          <li><a href="OurTeam.html">Our Team</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+ 
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoiZG9ueWFhYSIsImEiOiJja2FmcHVzMjUwMHl1MnJyOGJjZ3d1ZDN2In0.Xpcbdw2ReubEMhFvbYn_7w';
+ 
+		var filterGroup = document.getElementById('filter-group');
+		var map = new mapboxgl.Map({
+			container: 'map',
+      		style: 'mapbox://styles/mapbox/light-v10', // replace this with your style URL
+      		center: [-104.750596, 58.585901],
+      		zoom: 2.8
+		});
+
+		map.addControl(new mapboxgl.NavigationControl());
+
+
+    	var colors = ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c', '#fdbf6f'];
+ 
+		map.on('load', function() {
+			// Add a GeoJSON source containing place coordinates and information.
+			map.addSource('Laws' ,{
+        		'type': 'geojson',
+        		'data': 'https://donya1.github.io/WebsitefirstVersion/GeojsonData/FinalDataSingleOffencesLongLatFixed.geojson',
+        	});
+
+        	map.addLayer({
+        		'id':'Panhandling/Mendier',
+        		'type':'circle',
+        		'source':'Laws',
+        		'filter':['==', ['get', 'OffenceType'], 'Panhandling / Mendier'],
+        		'layout' : {
+        			//make layer visible by default
+        			'visibility':'visible'
+        		},
+        		'paint': {
+        			'circle-color': colors[0],
+          			'circle-radius': 5,
+          			'circle-opacity':0.7
+        		}
+        	});
+
+        	map.addLayer({
+        		'id':'Obstructing/Provoquer une obstruction',
+        		'type':'circle',
+        		'source':'Laws',
+        		'filter':['==', ['get', 'OffenceType'], 'Obstructing / Provoquer une obstruction'],
+        		'layout' : {
+        			//make layer visible by default
+        			'visibility':'visible'
+        		},
+        		'paint': {
+        			'circle-color': colors[1],
+          			'circle-radius': 5,
+          			'circle-opacity':0.7
+        		}
+        	});
+
+        	map.addLayer({
+        		'id':'Disorder/Occasionner des troubles',
+        		'type':'circle',
+        		'source':'Laws',
+        		'filter':['==', ['get', 'OffenceType'], 'Disorder / Occasionner des troubles'],
+        		'layout' : {
+        			//make layer visible by default
+        			'visibility':'visible'
+        		},
+        		'paint': {
+        			'circle-color': colors[2],
+          			'circle-radius': 5,
+          			'circle-opacity':0.7
+        		}
+        	});
+
+        	map.addLayer({
+        		'id':'Sheltering/Construire un abri de fortune',
+        		'type':'circle',
+        		'source':'Laws',
+        		'filter':['==', ['get', 'OffenceType'], 'Sheltering / Construire un abri de fortune'],
+        		'layout' : {
+        			//make layer visible by default
+        			'visibility':'visible'
+        		},
+        		'paint': {
+        			'circle-color': colors[3],
+          			'circle-radius': 5,
+          			'circle-opacity':0.7
+        		}
+        	});
+
+
+        	map.addLayer({
+        		'id':'Salvaging/Récupérer et réutiliser des déchets',
+        		'type':'circle',
+        		'source':'Laws',
+        		'filter':['==', ['get', 'OffenceType'], 'SSalvaging / Récupérer et réutiliser des déchets'],
+        		'layout' : {
+        			//make layer visible by default
+        			'visibility':'visible'
+        		},
+        		'paint': {
+        			'circle-color': colors[4],
+          			'circle-radius': 5,
+          			'circle-opacity':0.7
+        		}
+        	});
+
+        	map.addLayer({
+        		'id':'Loitering/Flâner',
+        		'type':'circle',
+        		'source':'Laws',
+        		'filter':['==', ['get', 'OffenceType'], 'Loitering / Flâner'],
+        		'layout' : {
+        			//make layer visible by default
+        			'visibility':'visible'
+        		},
+        		'paint': {
+        			'circle-color': colors[5],
+          			'circle-radius': 5,
+          			'circle-opacity':0.7
+        		}
+        	});
+
+        	map.addLayer({
+        		'id':'Resting/Se reposer',
+        		'type':'circle',
+        		'source':'Laws',
+        		'filter':['==', ['get', 'OffenceType'], "Resting or Sleeping / Se reposer ou S'allonger au sol"],
+        		'layout' : {
+        			//make layer visible by default
+        			'visibility':'visible'
+        		},
+        		'paint': {
+        			'circle-color': colors[6],
+          			'circle-radius': 5,
+          			'circle-opacity':0.7
+        		}
+        	});
+
+
+    		map.on('click', 'Panhandling/Mendier', function(e){
+        		var coordinates = e.features[0].geometry.coordinates.slice();
+        		var City = e.features[0].properties.City;
+        		var OT = e.features[0].properties.OffenceType;
+        		var Law = e.features[0].properties.LawName;
+
+      			while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        		coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      		}
+
+      		new mapboxgl.Popup({ offset: [0, -15] })
+        		.setLngLat(coordinates)
+        		.setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        		.addTo(map);
+    		});
+
+    		map.on('mouseenter', 'Panhandling/Mendier', function() {
+       			 map.getCanvas().style.cursor = 'pointer';
+      		});
+      		map.on('mouseleave', 'Panhandling/Mendier', function(){
+       			map.getCanvas().style.cursor = '';
+      		});
+
+      		map.on('click', 'Obstructing/Provoquer une obstruction', function(e){
+        		var coordinates = e.features[0].geometry.coordinates.slice();
+        		var City = e.features[0].properties.City;
+        		var OT = e.features[0].properties.OffenceType;
+        		var Law = e.features[0].properties.LawName;
+
+      			while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        		coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      		}
+
+      		new mapboxgl.Popup({ offset: [0, -15] })
+        		.setLngLat(coordinates)
+        		.setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        		.addTo(map);
+    		});
+
+    		map.on('mouseenter', 'Obstructing/Provoquer une obstruction', function() {
+       			 map.getCanvas().style.cursor = 'pointer';
+      		});
+      		map.on('mouseleave', 'Obstructing/Provoquer une obstruction', function(){
+       			map.getCanvas().style.cursor = '';
+      		});
+
+
+      		map.on('click', 'Disorder/Occasionner des troubles', function(e){
+        		var coordinates = e.features[0].geometry.coordinates.slice();
+        		var City = e.features[0].properties.City;
+        		var OT = e.features[0].properties.OffenceType;
+        		var Law = e.features[0].properties.LawName;
+
+      			while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        		coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      		}
+
+      		new mapboxgl.Popup({ offset: [0, -15] })
+        		.setLngLat(coordinates)
+        		.setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        		.addTo(map);
+    		});
+
+    		map.on('mouseenter', 'Disorder/Occasionner des troubles', function() {
+       			 map.getCanvas().style.cursor = 'pointer';
+      		});
+      		map.on('mouseleave', 'Disorder/Occasionner des troubles', function(){
+       			map.getCanvas().style.cursor = '';
+      		});
+
+
+      		map.on('click', 'Sheltering/Construire un abri de fortune', function(e){
+        		var coordinates = e.features[0].geometry.coordinates.slice();
+        		var City = e.features[0].properties.City;
+        		var OT = e.features[0].properties.OffenceType;
+        		var Law = e.features[0].properties.LawName;
+
+      			while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        		coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      		}
+
+      		new mapboxgl.Popup({ offset: [0, -15] })
+        		.setLngLat(coordinates)
+        		.setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        		.addTo(map);
+    		});
+
+    		map.on('mouseenter', 'Sheltering/Construire un abri de fortune', function() {
+       			 map.getCanvas().style.cursor = 'pointer';
+      		});
+      		map.on('mouseleave', 'Sheltering/Construire un abri de fortune', function(){
+       			map.getCanvas().style.cursor = '';
+      		});
+
+
+      		map.on('click', 'Salvaging/Récupérer et réutiliser des déchets', function(e){
+        		var coordinates = e.features[0].geometry.coordinates.slice();
+        		var City = e.features[0].properties.City;
+        		var OT = e.features[0].properties.OffenceType;
+        		var Law = e.features[0].properties.LawName;
+
+      			while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        		coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      		}
+
+      		new mapboxgl.Popup({ offset: [0, -15] })
+        		.setLngLat(coordinates)
+        		.setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        		.addTo(map);
+    		});
+
+    		map.on('mouseenter', 'Salvaging/Récupérer et réutiliser des déchets', function() {
+       			 map.getCanvas().style.cursor = 'pointer';
+      		});
+      		map.on('mouseleave', 'Salvaging/Récupérer et réutiliser des déchets', function(){
+       			map.getCanvas().style.cursor = '';
+      		});  
+
+
+
+      		map.on('click', 'Loitering/Flâner', function(e){
+        		var coordinates = e.features[0].geometry.coordinates.slice();
+        		var City = e.features[0].properties.City;
+        		var OT = e.features[0].properties.OffenceType;
+        		var Law = e.features[0].properties.LawName;
+
+      			while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        		coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      		}
+
+      		new mapboxgl.Popup({ offset: [0, -15] })
+        		.setLngLat(coordinates)
+        		.setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        		.addTo(map);
+    		});
+
+    		map.on('mouseenter', 'Loitering/Flâner', function() {
+       			 map.getCanvas().style.cursor = 'pointer';
+      		});
+      		map.on('mouseleave', 'Loitering/Flâner', function(){
+       			map.getCanvas().style.cursor = '';
+      		}); 
+
+
+      		map.on('click', 'Resting/Se reposer', function(e){
+        		var coordinates = e.features[0].geometry.coordinates.slice();
+        		var City = e.features[0].properties.City;
+        		var OT = e.features[0].properties.OffenceType;
+        		var Law = e.features[0].properties.LawName;
+
+      			while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        		coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      		}
+
+      		new mapboxgl.Popup({ offset: [0, -15] })
+        		.setLngLat(coordinates)
+        		.setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        		.addTo(map);
+    		});
+
+    		map.on('mouseenter', 'Resting/Se reposer', function() {
+       			 map.getCanvas().style.cursor = 'pointer';
+      		});
+      		map.on('mouseleave', 'Resting/Se reposer', function(){
+       			map.getCanvas().style.cursor = '';
+      		});
+
+
+        });
+
+        //enumerate ids of the layers
+        var toggleableLayerIds = ['Panhandling/Mendier', 'Obstructing/Provoquer une obstruction', 'Disorder/Occasionner des troubles', 'Sheltering/Construire un abri de fortune', 'Salvaging/Récupérer et réutiliser des déchets', 'Loitering/Flâner', 'Resting/Se reposer'];
+
+        //set up the corresponding toggle button for each layer
+        for (var i = 0; i< toggleableLayerIds.length; i++) {
+        	var id = toggleableLayerIds [i];
+
+        	var link = document.createElement('a');
+        	link.href = '#';
+        	link.className = 'active';
+        	link.textContent = id;
+
+        	link.onclick = function(e) {
+        		var clickedLayer = this.textContent;
+        		e.preventDefault();
+        		e.stopPropagation();
+
+        		var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+        //toggle layer visibility by changing the layout object's visibility property
+
+        		if (visibility === 'visible') {
+        			map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+        			this.className = '';
+        		} else {
+        			this.className = 'active';
+        			map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        		}
+
+        	};
+
+        	var layers = document.getElementById('menu');
+        	layers.appendChild(link);
+
+        }
+
+</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="Script.js"></script>
+ 
+</body>
+</html>
