@@ -102,7 +102,7 @@
 		}
 
 		#panBox {
-			background-color:#a6cee3;
+			background-color:#6a3d9a;
 		}
 
 		#obsBox {
@@ -126,7 +126,7 @@
 		}
 
 		#sitBox {
-			background-color:#fdbf6f;
+			background-color:#ff7f00;
 		}
 
     .mobileLegend {
@@ -272,7 +272,7 @@
 		map.addControl(new mapboxgl.NavigationControl());
 
 
-    	var colors = ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c', '#fdbf6f'];
+    	var colors = ['#6a3d9a', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c', '#ff7f00'];
  
 		map.on('load', function() {
 			// Add a GeoJSON source containing place coordinates and information.
@@ -282,7 +282,7 @@
         	});
 
         	map.addLayer({
-        		'id':'Panhandling/Mendier',
+        		'id':'Panhandling',
         		'type':'circle',
         		'source':'Laws',
         		'filter':['==', ['get', 'OffenceType'], 'Panhandling / Mendier'],
@@ -298,7 +298,7 @@
         	});
 
         	map.addLayer({
-        		'id':'Obstructing/Provoquer une obstruction',
+        		'id':'Obstructing',
         		'type':'circle',
         		'source':'Laws',
         		'filter':['==', ['get', 'OffenceType'], 'Obstructing / Provoquer une obstruction'],
@@ -314,7 +314,7 @@
         	});
 
         	map.addLayer({
-        		'id':'Disorder/Occasionner des troubles',
+        		'id':'Disorder',
         		'type':'circle',
         		'source':'Laws',
         		'filter':['==', ['get', 'OffenceType'], 'Disorder / Occasionner des troubles'],
@@ -330,7 +330,7 @@
         	});
 
         	map.addLayer({
-        		'id':'Sheltering/Construire un abri de fortune',
+        		'id':'Sheltering',
         		'type':'circle',
         		'source':'Laws',
         		'filter':['==', ['get', 'OffenceType'], 'Sheltering / Construire un abri de fortune'],
@@ -347,10 +347,10 @@
 
 
         	map.addLayer({
-        		'id':'Salvaging/Récupérer et réutiliser des déchets',
+        		'id':'Salvaging',
         		'type':'circle',
         		'source':'Laws',
-        		'filter':['==', ['get', 'OffenceType'], 'SSalvaging / Récupérer et réutiliser des déchets'],
+        		'filter':['==', ['get', 'OffenceType'], 'Salvaging / Récupérer et réutiliser des déchets'],
         		'layout' : {
         			//make layer visible by default
         			'visibility':'visible'
@@ -363,7 +363,7 @@
         	});
 
         	map.addLayer({
-        		'id':'Loitering/Flâner',
+        		'id':'Loitering',
         		'type':'circle',
         		'source':'Laws',
         		'filter':['==', ['get', 'OffenceType'], 'Loitering / Flâner'],
@@ -379,7 +379,7 @@
         	});
 
         	map.addLayer({
-        		'id':'Resting/Se reposer',
+        		'id':'Resting',
         		'type':'circle',
         		'source':'Laws',
         		'filter':['==', ['get', 'OffenceType'], "Resting or Sleeping / Se reposer ou S'allonger au sol"],
@@ -395,7 +395,7 @@
         	});
 
 
-    		map.on('click', 'Panhandling/Mendier', function(e){
+    		map.on('click', 'Panhandling', function(e){
         		var coordinates = e.features[0].geometry.coordinates.slice();
         		var City = e.features[0].properties.City;
         		var OT = e.features[0].properties.OffenceType;
@@ -411,14 +411,14 @@
         		.addTo(map);
     		});
 
-    		map.on('mouseenter', 'Panhandling/Mendier', function() {
+    		map.on('mouseenter', 'Panhandling', function() {
        			 map.getCanvas().style.cursor = 'pointer';
       		});
-      		map.on('mouseleave', 'Panhandling/Mendier', function(){
+      		map.on('mouseleave', 'Panhandling', function(){
        			map.getCanvas().style.cursor = '';
       		});
 
-      		map.on('click', 'Obstructing/Provoquer une obstruction', function(e){
+      		map.on('click', 'Obstructing', function(e){
         		var coordinates = e.features[0].geometry.coordinates.slice();
         		var City = e.features[0].properties.City;
         		var OT = e.features[0].properties.OffenceType;
@@ -434,39 +434,15 @@
         		.addTo(map);
     		});
 
-    		map.on('mouseenter', 'Obstructing/Provoquer une obstruction', function() {
+    		map.on('mouseenter', 'Obstructing', function() {
        			 map.getCanvas().style.cursor = 'pointer';
       		});
-      		map.on('mouseleave', 'Obstructing/Provoquer une obstruction', function(){
-       			map.getCanvas().style.cursor = '';
-      		});
-
-
-      		map.on('click', 'Disorder/Occasionner des troubles', function(e){
-        		var coordinates = e.features[0].geometry.coordinates.slice();
-        		var City = e.features[0].properties.City;
-        		var OT = e.features[0].properties.OffenceType;
-        		var Law = e.features[0].properties.LawName;
-
-      			while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
-        		coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-      		}
-
-      		new mapboxgl.Popup({ offset: [0, -15] })
-        		.setLngLat(coordinates)
-        		.setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
-        		.addTo(map);
-    		});
-
-    		map.on('mouseenter', 'Disorder/Occasionner des troubles', function() {
-       			 map.getCanvas().style.cursor = 'pointer';
-      		});
-      		map.on('mouseleave', 'Disorder/Occasionner des troubles', function(){
+      		map.on('mouseleave', 'Obstructing', function(){
        			map.getCanvas().style.cursor = '';
       		});
 
 
-      		map.on('click', 'Sheltering/Construire un abri de fortune', function(e){
+      		map.on('click', 'Disorder', function(e){
         		var coordinates = e.features[0].geometry.coordinates.slice();
         		var City = e.features[0].properties.City;
         		var OT = e.features[0].properties.OffenceType;
@@ -482,15 +458,15 @@
         		.addTo(map);
     		});
 
-    		map.on('mouseenter', 'Sheltering/Construire un abri de fortune', function() {
+    		map.on('mouseenter', 'Disorder', function() {
        			 map.getCanvas().style.cursor = 'pointer';
       		});
-      		map.on('mouseleave', 'Sheltering/Construire un abri de fortune', function(){
+      		map.on('mouseleave', 'Disorder', function(){
        			map.getCanvas().style.cursor = '';
       		});
 
 
-      		map.on('click', 'Salvaging/Récupérer et réutiliser des déchets', function(e){
+      		map.on('click', 'Sheltering', function(e){
         		var coordinates = e.features[0].geometry.coordinates.slice();
         		var City = e.features[0].properties.City;
         		var OT = e.features[0].properties.OffenceType;
@@ -506,16 +482,40 @@
         		.addTo(map);
     		});
 
-    		map.on('mouseenter', 'Salvaging/Récupérer et réutiliser des déchets', function() {
+    		map.on('mouseenter', 'Sheltering', function() {
        			 map.getCanvas().style.cursor = 'pointer';
       		});
-      		map.on('mouseleave', 'Salvaging/Récupérer et réutiliser des déchets', function(){
+      		map.on('mouseleave', 'Sheltering', function(){
+       			map.getCanvas().style.cursor = '';
+      		});
+
+
+      		map.on('click', 'Salvaging', function(e){
+        		var coordinates = e.features[0].geometry.coordinates.slice();
+        		var City = e.features[0].properties.City;
+        		var OT = e.features[0].properties.OffenceType;
+        		var Law = e.features[0].properties.LawName;
+
+      			while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        		coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      		}
+
+      		new mapboxgl.Popup({ offset: [0, -15] })
+        		.setLngLat(coordinates)
+        		.setHTML('<h3>' + City + '</h3><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        		.addTo(map);
+    		});
+
+    		map.on('mouseenter', 'Salvaging', function() {
+       			 map.getCanvas().style.cursor = 'pointer';
+      		});
+      		map.on('mouseleave', 'Salvaging', function(){
        			map.getCanvas().style.cursor = '';
       		});  
 
 
 
-      		map.on('click', 'Loitering/Flâner', function(e){
+      		map.on('click', 'Loitering', function(e){
         		var coordinates = e.features[0].geometry.coordinates.slice();
         		var City = e.features[0].properties.City;
         		var OT = e.features[0].properties.OffenceType;
@@ -531,15 +531,15 @@
         		.addTo(map);
     		});
 
-    		map.on('mouseenter', 'Loitering/Flâner', function() {
+    		map.on('mouseenter', 'Loitering', function() {
        			 map.getCanvas().style.cursor = 'pointer';
       		});
-      		map.on('mouseleave', 'Loitering/Flâner', function(){
+      		map.on('mouseleave', 'Loitering', function(){
        			map.getCanvas().style.cursor = '';
       		}); 
 
 
-      		map.on('click', 'Resting/Se reposer', function(e){
+      		map.on('click', 'Resting', function(e){
         		var coordinates = e.features[0].geometry.coordinates.slice();
         		var City = e.features[0].properties.City;
         		var OT = e.features[0].properties.OffenceType;
@@ -555,10 +555,10 @@
         		.addTo(map);
     		});
 
-    		map.on('mouseenter', 'Resting/Se reposer', function() {
+    		map.on('mouseenter', 'Resting', function() {
        			 map.getCanvas().style.cursor = 'pointer';
       		});
-      		map.on('mouseleave', 'Resting/Se reposer', function(){
+      		map.on('mouseleave', 'Resting', function(){
        			map.getCanvas().style.cursor = '';
       		});
 
@@ -566,7 +566,7 @@
         });
 
         //enumerate ids of the layers
-        var toggleableLayerIds = ['Panhandling/Mendier', 'Obstructing/Provoquer une obstruction', 'Disorder/Occasionner des troubles', 'Sheltering/Construire un abri de fortune', 'Salvaging/Récupérer et réutiliser des déchets', 'Loitering/Flâner', 'Resting/Se reposer'];
+        var toggleableLayerIds = ['Panhandling', 'Obstructing', 'Disorder', 'Sheltering', 'Salvaging', 'Loitering', 'Resting'];
 
         //set up the corresponding toggle button for each layer
         for (var i = 0; i< toggleableLayerIds.length; i++) {
