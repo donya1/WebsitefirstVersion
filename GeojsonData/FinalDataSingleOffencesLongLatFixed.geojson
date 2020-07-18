@@ -419,22 +419,6 @@
     {
       "type": "Feature",
       "properties": {
-        "City": "Langley",
-        "OffenceType": "Loitering / Flâner",
-        "LawName": "Highway and Traffic Regulation By-Law - 2971 (2013)"
-      },
-      "geometry": {
-        "coordinates": [
-          -122.656065,
-          49.107249
-        ],
-        "type": "Point"
-      },
-      "id": "0d3d93ca8fe31fa0032e0114d63a645b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "City": "Chestermere",
         "OffenceType": "Sheltering / Construire un abri de fortune",
         "LawName": "Community Standards By-Law - 004-12 (2012)"
@@ -677,23 +661,7 @@
       "properties": {
         "City": "Sidney",
         "OffenceType": "Sheltering / Construire un abri de fortune",
-        "LawName": "Parks By-Law - 1688 (2001)"
-      },
-      "geometry": {
-        "coordinates": [
-          -123.398466,
-          48.649276
-        ],
-        "type": "Point"
-      },
-      "id": "1842ed971ab4b64e66651ecec739bd4e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "City": "Sidney",
-        "OffenceType": "Sheltering / Construire un abri de fortune",
-        "LawName": "Parks By-Law - 1688, 2001 (2001, a. 2018)"
+        "LawName": "Parks By-Law - 1688, (2001)"
       },
       "geometry": {
         "coordinates": [
@@ -1551,22 +1519,6 @@
         "type": "Point"
       },
       "id": "389f65fc611cf1110c743cbbbe809854"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "City": "Duncan",
-        "OffenceType": "Obstructing / Provoquer une obstruction",
-        "LawName": "Streets and Parking Regulations By-Law - 3101 (2014)"
-      },
-      "geometry": {
-        "coordinates": [
-          -123.707064,
-          48.775813
-        ],
-        "type": "Point"
-      },
-      "id": "38bc7ea4a66d49714be847ca654f6d7a"
     },
     {
       "type": "Feature",
@@ -2531,22 +2483,6 @@
     {
       "type": "Feature",
       "properties": {
-        "City": "Langley",
-        "OffenceType": "Loitering / Flâner",
-        "LawName": "Parks and Public Facilities Regulation By-Law - 3048 (2018)"
-      },
-      "geometry": {
-        "coordinates": [
-          -122.66061,
-          49.107398
-        ],
-        "type": "Point"
-      },
-      "id": "602c8022edb44556b0a640792a3d2a1c"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "City": "Saint-Jean-Sur Richelieu",
         "OffenceType": "Sheltering / Construire un abri de fortune",
         "LawName": "Réglement Concernant les Nuisances, la Salubrité et la Sécurité et Abrogeant le Réglement No.0693 et ses Amendments - (2020)"
@@ -3267,22 +3203,6 @@
     {
       "type": "Feature",
       "properties": {
-        "City": "New Westminster",
-        "OffenceType": "Obstructing / Provoquer une obstruction",
-        "LawName": "Street and Traffic By-Law - 7664 (2016)"
-      },
-      "geometry": {
-        "coordinates": [
-          -122.913417,
-          49.207823
-        ],
-        "type": "Point"
-      },
-      "id": "7c425da2fd240eeaff68141d862afbb2"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "City": "Ville De Saint-Jérôme",
         "OffenceType": "Sheltering / Construire un abri de fortune",
         "LawName": "Réglement Concernant la Propreté, La Sécurité, La Paix, L'Ordre et Le Bien-Être - 0217-000 (2004)"
@@ -3439,22 +3359,6 @@
         "type": "Point"
       },
       "id": "8493ff6c529ce46aff1017de25515812"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "City": "Sidney",
-        "OffenceType": "Loitering / Flâner",
-        "LawName": "Parks By-Law - 1688, 2001 (2001, a. 2018)"
-      },
-      "geometry": {
-        "coordinates": [
-          -123.3968,
-          48.650336
-        ],
-        "type": "Point"
-      },
-      "id": "84aed71ef3cd7ecb103b7bc02b734983"
     },
     {
       "type": "Feature",
@@ -3619,22 +3523,6 @@
     {
       "type": "Feature",
       "properties": {
-        "City": "Sidney",
-        "OffenceType": "Resting or Sleeping / Se reposer ou S'allonger au sol",
-        "LawName": "Streets and Traffic Regulation By-Law - 1966, (2010)"
-      },
-      "geometry": {
-        "coordinates": [
-          -123.398153,
-          48.650996
-        ],
-        "type": "Point"
-      },
-      "id": "8b1f6d238c2a3ebf2146af5a6ceda30b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "City": "Pelham",
         "OffenceType": "Loitering / Flâner",
         "LawName": "Public Nuisance By-Law - 2970 (2008)"
@@ -3775,22 +3663,6 @@
         "type": "Point"
       },
       "id": "93d7eb30f55c257a0a6ad19669177cde"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "City": "New Westminster",
-        "OffenceType": "Disorder / Occasionner des troubles",
-        "LawName": "Street and Traffic By-Law - 7664 (2016)"
-      },
-      "geometry": {
-        "coordinates": [
-          -122.91634,
-          49.210178
-        ],
-        "type": "Point"
-      },
-      "id": "9483c1e69f307a892ff3620cf8b19ab4"
     },
     {
       "type": "Feature",
@@ -4083,22 +3955,6 @@
     {
       "type": "Feature",
       "properties": {
-        "City": "Duncan",
-        "OffenceType": "Loitering / Flâner",
-        "LawName": "Streets and Parking Regulations By-Law - 3101 (2014)"
-      },
-      "geometry": {
-        "coordinates": [
-          -123.706758,
-          48.778634
-        ],
-        "type": "Point"
-      },
-      "id": "a124148c1613b8813eebfe54165c9db6"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "City": "Thompson",
         "OffenceType": "Loitering / Flâner",
         "LawName": "Behavioural By-Law - 1736 (2007)"
@@ -4143,22 +3999,6 @@
         "type": "Point"
       },
       "id": "a3b4c50631b63a17e57dabb99ad11b55"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "City": "Sidney",
-        "OffenceType": "Panhandling / Mendier",
-        "LawName": "Streets and Traffic Regulation By-Law - 1966 (2010)"
-      },
-      "geometry": {
-        "coordinates": [
-          -123.397174,
-          48.649346
-        ],
-        "type": "Point"
-      },
-      "id": "a4c78c9909c6f4e6ed4ccfe76fb7f2d3"
     },
     {
       "type": "Feature",
@@ -4339,22 +4179,6 @@
     {
       "type": "Feature",
       "properties": {
-        "City": "Sidney",
-        "OffenceType": "Disorder / Occasionner des troubles",
-        "LawName": "Parks By-Law - 1688 (2001)"
-      },
-      "geometry": {
-        "coordinates": [
-          -123.397023,
-          48.65123
-        ],
-        "type": "Point"
-      },
-      "id": "af56ad2fcd2cbaa1fb0497d069fc0309"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "City": "Ville De Saint-Jérôme",
         "OffenceType": "Panhandling / Mendier",
         "LawName": "Réglement Concernant la Propreté, La Sécurité, La Paix, L'Ordre et Le Bien-Être - 0217-000 (2004)"
@@ -4495,22 +4319,6 @@
         "type": "Point"
       },
       "id": "b7f76debb3493bc689067907c57783d5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "City": "Langley",
-        "OffenceType": "Resting or Sleeping / Se reposer ou S'allonger au sol",
-        "LawName": "Parks and Public Facilities Regulation By-Law - 3048 (2018)"
-      },
-      "geometry": {
-        "coordinates": [
-          -122.656065,
-          49.10234
-        ],
-        "type": "Point"
-      },
-      "id": "b8fce630ad77e9235bfe317261edddf2"
     },
     {
       "type": "Feature",
@@ -4707,22 +4515,6 @@
     {
       "type": "Feature",
       "properties": {
-        "City": "Truro",
-        "OffenceType": "Panhandling / Mendier",
-        "LawName": "Public Places By-Law - B130-006 (2006)"
-      },
-      "geometry": {
-        "coordinates": [
-          -63.296766,
-          45.365955
-        ],
-        "type": "Point"
-      },
-      "id": "c61003e4a7a84264e88df5a4087c6925"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "City": "New Glasgow",
         "OffenceType": "Loitering / Flâner",
         "LawName": "Public Places By-Law - 39 (2017)"
@@ -4783,22 +4575,6 @@
         "type": "Point"
       },
       "id": "c8c0a005e7e96901d0ae1e07eed5d01a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "City": "Sidney",
-        "OffenceType": "Obstructing / Provoquer une obstruction",
-        "LawName": "Streets and Traffic Regulation By-Law - 1966 (2010)"
-      },
-      "geometry": {
-        "coordinates": [
-          -123.396139,
-          48.649836
-        ],
-        "type": "Point"
-      },
-      "id": "c8fba981d3dca76e13a69fcb4894202c"
     },
     {
       "type": "Feature",
@@ -5183,22 +4959,6 @@
         "type": "Point"
       },
       "id": "d5485337d78756d04f16ad12ea656269"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "City": "Longueuil",
-        "OffenceType": "Sheltering / Construire un abri de fortune",
-        "LawName": "Règlement numéro 81-1923 Pourvoyant au bon ordre et à la paix dans les parcs et endroits publics de la ville de Longueuil - 1981 (2020)"
-      },
-      "geometry": {
-        "coordinates": [
-          -73.503217,
-          45.538783
-        ],
-        "type": "Point"
-      },
-      "id": "d5bc367f788e0f16209c75f524405f36"
     },
     {
       "type": "Feature",
