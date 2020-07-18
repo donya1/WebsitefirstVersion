@@ -189,6 +189,12 @@ var data = {
     });
   });
 
+  $(document).ready(function(){
+    $('.biblioExpand').click(function() {
+      $('.bibliography').toggle("slide");
+    });
+  });
+
 
 
 

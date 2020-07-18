@@ -24,8 +24,9 @@
         font-size:11px;
       }
 
-      .mapboxgl-popup h4{
-        font-style:italic;
+      .mapboxgl-popup h3{
+        font-weight:700;
+        font-size:1.2em;
       }
 
     </style>
@@ -48,14 +49,14 @@
 
       <div id='map'></div>
    <div class="content">
-      <div class= "caption"><h2>NEO-VAGRANCY OFFENCES ACROSS CANADA:<span class='capDes'>&nbsp; The number and location of offences are mapped. Click on clusters and individual points to explore.</span></h2></div>
+      <div class= "caption"><h2>NEO-VAGRANCY OFFENCES ACROSS CANADA:<span class='capDes'>&nbsp; The number and location of by-laws are mapped. Click on clusters and individual points to explore.</span></h2></div>
 
     <div class="mapMenu">
       <h1>Viewing Options</h1>
       <ul>
-        <li><a class="current" href="mapOne.html">by the Numbers</a></li>
-        <li><a href="mapTwo.html">by Offence Type</a></li>
-        <li><a href="mapThree.html">by Offence Distribution</a></li>
+        <li><a class="current" href="mapOne.html">By-Law Numbers</a></li>
+        <li><a href="mapTwo.html">Offence Types</a></li>
+        <li><a href="mapThree.html">Offence Distribution</a></li>
       </ul>
     </div>
     <div class="writeUp">
@@ -129,9 +130,8 @@
 	  <p class="notes" id="notes3">Hermer, J., & Fonarev, E. (2020, July 12). Neo-Vagrancy Laws in Canada. Retrieved from: http://covid19-phi.ca/</p>
 
 
-
+<h3>Bibliography<button class="biblioExpand"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></button></h3>
 	  <div class="bibliography">
-	  		  <h3>Bibliography</h3>
 	  	
 	  	<p>Bellot, C., & Sylvestre, M. (2017). La judiciarisation de l’itinérance à Montréal : les dérives 
 		sécuritaires de la gestion pénale de la pauvreté. <span class="jouTit">Revue générale de droit</span>, 47: 11–44.</p>
@@ -351,7 +351,7 @@
 
       new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(coordinates)
-        .setHTML('<h2>' + City + '</h2><h4>' +'Offence Type: ' + OT + '</h4><p>' + Law + '</p>')
+        .setHTML('<h3>' + City + '</h3><h4>' +Law + '</h4><p>' + 'Offence Type: ' + OT + '</p>')
         .addTo(map);
     });
 

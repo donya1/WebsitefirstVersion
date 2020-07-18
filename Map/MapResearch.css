@@ -243,11 +243,8 @@ h3 {
 .bibliography {
     margin-left: 40px;
     text-indent: -40px;
+    display:none;
 
-}
-
-.biblioContainer .bibliography{
-	display:none;
 }
 
 .bibliography p{
@@ -258,6 +255,7 @@ h3 {
 .biblioExpand {
 	width:20px;
 	height:20px;
+	margin-left:20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -279,7 +277,7 @@ h3 {
 	}
 
 	.content {
-		grid-template-rows:0.05fr 0.05fr 1fr 0.05fr;
+		grid-template-rows:0.02fr 0.02fr 1fr 0.05fr;
 		grid-gap:0.5em;
 		grid-template-areas: 
 			"cap cap cap cap"
@@ -287,7 +285,7 @@ h3 {
 			"main main main main"
 			"foot foot foot foot";
 		margin:10px;
-		top:83%;
+		top:85%;
 	}
 
 	.caption {
@@ -320,7 +318,7 @@ h3 {
 	}
 		
 	.content {
-		grid-template-rows:0.05fr 0.05fr 1fr 0.05fr;
+		grid-template-rows:0.02fr 0.02fr 1fr 0.05fr;
 		grid-gap:0.5em;
 		grid-template-areas: 
 			"cap cap cap cap"
@@ -328,7 +326,7 @@ h3 {
 			"main main main main"
 			"foot foot foot foot";
 		margin:10px;
-		top:83%;
+		top:85%;
 	}
 
 
