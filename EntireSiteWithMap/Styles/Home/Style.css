@@ -224,6 +224,26 @@ a.active {
 	padding-bottom:2%;
 }
 
+h3{
+	padding-bottom:30px;
+
+}
+
+h3 a{
+	font-size:0.8em;
+	color:rgba(96,8,62);
+	font-family:"Open Sans";
+}
+
+.writeUp h2 {
+	font-family:"Open Sans";
+	color:rgb(96,8,62);
+	font-size:1em;
+	padding:10px 0px 30px 0px;
+	font-style:italic;
+}
+}
+
 .intextTwitter {
 		display:none;
 	}
@@ -690,6 +710,15 @@ hr {
 		margin-top:20px;
 		margin-bottom:20px;
 	}
+
+
+}
+
+@media only screen and (min-width: 1280px) {
+	.intextTwitter {
+		display:none;
+	}
+	
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1366px) {
@@ -698,6 +727,8 @@ hr {
 	}
 	
 }
+
+
 
 @media only screen and (min-width: 1500px) {
 
@@ -743,6 +774,10 @@ hr {
 
 	caption {
 		font-size:25px;
+	}
+
+	.intextTwitter {
+		display:none;
 	}
 
 }

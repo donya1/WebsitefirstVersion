@@ -31,11 +31,7 @@ const par2El = document.querySelector('.par2')
 const par3El = document.querySelector('.par3')
 const par4El = document.querySelector('.par4')
 const captionEl = document.querySelector('.caption')
-const th1El = document.querySelector('.th1')
-const th2El = document.querySelector('.th2')
-const th3El = document.querySelector('.th3')
 const th4El = document.querySelector('.th4')
-const th5El = document.querySelector('.th5')
 const th6El = document.querySelector('.th6')
 // //active class is added to the link that is clicked
 link.forEach(el => {
@@ -55,7 +51,6 @@ link.forEach(el => {
 	   par3El.textContent = data[attr].par3;
 	   par4El.textContent = data[attr].par4;
 	   captionEl.textContent = data[attr].caption;
-	   th2El.textContent = data[attr].th2;
 	   th4El.textContent = data[attr].th4;
 	   th6El.textContent = data[attr].th6;
 
@@ -74,7 +69,6 @@ var data = {
 	   "par3":"Yet, police are frequently called upon to respond to individuals, many from racialized populations, who are in distress and dire circumstances. Law enforcement has long been an accepted response to abject poverty and lack of affordable shelter. But criminalisation of people who are homeless is now very clearly in conflict with ensuring their health and safety.",
 	   "par4":"The COVID-19 Policing and Homelessness Initiative is a rapid response research project based at the University of Toronto, Scarborough. Our goal is to promote and support a move away from the criminalisation of poverty, with solutions that serve the immediate and long-term needs of the homeless.",
 	   "caption":"Coming Soon:",
-	   "th2":"MAPPING ANTI-HOMELESS LAWS ACROSS CANADA",
 	   "th4":"RESEARCH PAPER: LAW ENFORCEMENT AS AN OBSTACLE TO ALEVIATING HOMELESSNESS",
 	   "th6":"BEST PRACTICE GUIDANCE FOR POLICING AGENTS ENCOUNTERING HOMELESS PEOPLE",
 
@@ -90,9 +84,8 @@ var data = {
 	   "par3":"",
 	   "par4":"",
 	   "caption":"",
-	   "th2":"",
-	   "th4":"Texte français à suivre.",
-	   "th6":"",
+	   "th4":"",
+	   "th6":"Texte français à suivre.",
 
 	  }
  }

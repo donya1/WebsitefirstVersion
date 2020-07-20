@@ -203,6 +203,16 @@ h3 {
 	padding:30px 50px 30px 50px;
 }
 
+.writeUp a {
+	text-decoration:none;
+	color:rgb(96,8,62);
+	cursor:pointer;
+}
+
+.writeUp a:hover {
+	font-style:italic;
+}
+
 .par {
 	padding-bottom:2%;
 }
