@@ -1,0 +1,782 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+body {
+	overflow-x:hidden;
+}
+
+.introContainer {
+	width:100vw;
+	height:100vh;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:#1e0228;
+	color:white;
+	animation:FadeIn 1s ease-in-out;
+}
+
+.introContainer h1 {
+	font-family: "Fira Sans";
+	font-size:3.6rem;
+	width:100vw;
+	text-align:center;
+	position:relative;
+	top:40%;
+	left:50%;
+	transform:translate(-50%, -40%);
+	letter-spacing: 0.03em;
+	line-height:1.4;
+	text-transform:uppercase;
+	animation:FadeIn 3s ease-in-out;
+}
+
+.introContainer h2 {
+	font-family: "Fira Sans";
+	font-size:3rem;
+	width:100vw;
+	text-align:center;
+	position:relative;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -40%);
+	letter-spacing: 0.03em;
+	line-height:1.4;
+	font-style:italic;
+	animation:FadeIn 3s ease-in-out;
+}
+
+@keyframes FadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+button {
+	font-size:15px;
+	font-family: "Fira Sans";
+	background-color:transparent;
+	color:white;
+	border: 1px solid white;
+	padding:10px;
+	width:120px;
+	height:40px;
+	position:relative;
+	top:56vh;
+	left:50%;
+	transform:translateX(-50%);
+	text-align:center;
+	margin:auto;
+	animation:FadeIn 3s ease-in-out;
+	cursor:pointer;
+}
+
+.Content {
+	margin-top:100vh;
+	width:100vw;
+}
+
+.ConWrap {
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 0.5fr 1fr;
+	grid-gap:4em;
+	grid-template-areas: 
+		"main main main main main"
+		"side con con con lang";
+}
+
+
+.Title {
+	font-family:"Open Sans";
+	background: url("Images/Splash.png") no-repeat fixed center;
+	background-size: 1500px;
+	background-position: 0% 90%;
+	grid-area: main;
+}
+
+.TiTag {
+	position:relative;
+}
+
+.Logo {
+	transform: scale(0.35);
+	position:absolute;
+	left:-240px;
+	top:-200px;
+}
+
+.titleContainer {
+	display:flex;
+	flex-direction:column;
+	width:600px;
+	position:absolute;
+	top:110px;
+	left:200px;
+
+}
+
+.Title h1 {
+	font-size:3.5rem;
+	font-weight: 700;
+	text-transform:uppercase;
+	color: rgb(47,28,58);
+	line-height:1.15;
+}
+
+.Title h2 {
+	font-size:1.5rem;
+	font-weight: 600;
+	color:rgb(96,8,62);
+	font-style:italic;
+}
+
+.nav {
+	font-family: "open sans";
+	font-size:17px;
+	text-transform:uppercase;
+	font-weight:600;
+	grid-area:side;
+	margin-left:100px;
+	margin-bottom:30px;
+}
+
+.stick {
+	position:sticky;
+	top:50px;
+}
+
+a {
+	color:gray;
+	text-decoration:none;
+}
+
+.nav a:hover{
+	text-decoration:none;
+	cursor:pointer;
+	color:rgb(96,8,62);
+}
+
+.nav ul {
+	list-style-type: none;
+}
+
+.nav li {
+	padding:10px;
+}
+
+.nav .current {
+	color:rgba(96,8,62);
+}
+
+.TwitterFeed {
+	width:240px;
+	padding-top:30px;
+}
+
+.twitter-timeline {
+	max-width:200px;
+	max-height:400px;
+}
+
+.langWrap {
+	font-family:freight-text-pro, serif;
+	font-weight:300;
+	font-size:1em;
+	cursor:pointer;
+	z-index:1;
+	grid-area:lang;
+	padding-top:4px;
+}
+
+#Eng {
+	border-right:1px solid rgb(109,13,112);
+	padding-right: 8px;
+}
+
+.langWrap a {
+	color:rgb(109,13,112);
+	padding:3px;
+}
+
+a.active {
+	font-weight:bold;
+}
+
+.writeUp {
+	font-family: freight-text-pro, serif;
+	line-height:1.5;
+	font-size:21px;
+	grid-area: con;
+	z-index:1;
+}
+
+.writeUp p{
+	padding-bottom:2%;
+}
+
+.writeUp h3{
+	padding-bottom:30px;
+
+}
+
+.writeUp h3 a{
+	font-size:0.8em;
+	color:rgba(96,8,62);
+	font-family:"Open Sans";
+}
+
+.writeUp h2 {
+	font-family:"Open Sans";
+	color:rgb(96,8,62);
+	font-size:1em;
+	padding:10px 0px 30px 0px;
+	font-style:italic;
+}
+}
+
+.intextTwitter {
+		display:none;
+	}
+
+
+table {
+	width:630px;
+	font-size:14px;
+	text-align:left;
+}
+
+table, th, td {
+	margin-top:18px;
+	margin-bottom:18px;
+	border-collapse: collapse;
+
+}
+
+th, td {
+	padding:3px;
+}
+
+tr:nth-child(2) {
+	border-bottom:1px solid lightgray;
+
+}
+
+th {
+	font-weight:400;
+	font-style:italic;
+	text-transform:uppercase;
+}
+
+td {
+	font-weight:400;
+	font-style:italic;
+	text-transform:uppercase;
+}
+
+caption {
+	font-size:15px;
+	font-weight:600;
+	text-align:left;
+}
+
+.footer {
+	width:100%;
+	height:330px;
+	margin-top:50px;
+
+}
+
+hr {
+	width:80%;
+	margin:auto;
+}
+
+.Logos {
+	display:flex;
+	flex-flow: row wrap;
+	justify-content:space-evenly;
+}
+
+.Logopic {
+	width:200px;
+	height:100px;
+	margin:30px;
+
+}
+
+.Logos img {
+	max-width:100%;
+	max-height:100%;
+	display:block;
+	margin:0 auto;
+}
+
+.bottomNav {
+	display:flex;
+	justify-content:flex-start;
+	flex-direction:column;
+	padding:40px;
+}
+
+.bottomNav ul {
+	list-style-type: none;
+	margin:auto;
+
+}
+
+.bottomNav li {
+	font-family:"Open Sans";
+	float:left;
+	display:block;
+	text-align:center;
+	font-size:12px;
+	font-weight:400;
+	padding-right:50px;
+	padding-left:50px;
+}
+
+.Liscense {
+	text-align:center;
+	width:100vw;
+	font-size:10px;
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:row;
+	justify-content:center;
+	line-height:1.4;
+}
+
+.Liscense-Image {
+	width:100px;
+	margin:auto;
+	transform:scale(0.5);
+}
+
+@media only screen and (max-width: 600px) {
+
+	.introContainer h1 {
+		font-size:18px;
+		width:250px;
+		line-height:1.6;
+	}
+
+	.introContainer h2 {
+		font-size:18px;
+		width:250px;
+		line-height:1.6;
+	}
+
+	.Title {
+		height:220px;
+		background-size:400%;
+		background-position:80% 20%;
+	}
+
+	.Logo {
+		transform:scale(0.15);
+		left:-340px;
+		top:-250px;
+	}
+
+	.TiTag{
+		top:-10px;
+		left:-20px;
+	}
+
+	.titleContainer {
+		width:210px;
+		left:100px;
+	}
+
+	.TiTag h1{
+		font-size:18px;
+		left:90px;
+		top:110px;
+
+	}
+
+	.TiTag h2{
+		font-size:12px;
+		top:154px;
+		left:92px;
+	}
+
+	.ConWrap {
+		grid-template-columns:1fr 1fr 0.2fr;
+		grid-template-rows: 0.2fr 1fr;
+		grid-gap:0em;
+		grid-template-areas: 
+			"main main main"
+			"con con lang";
+	}
+
+	.nav {
+		display:none;
+	}
+
+	.intextTwitter {
+		display:block;
+	}
+
+	.intextTwitter .twitter-timeline {
+		max-width:200px;
+		max-height:200px;
+	}
+
+	.writeUp {
+		font-size:14px;
+		padding:10px;
+		margin: 10px;
+	}
+
+	.langWrap {
+		font-size:10px;
+		margin-left:-10px;
+		padding-top:24px;
+	}
+
+	.langWrap a {
+		padding:0px;
+	}
+
+	#Eng {
+		padding-right:4px;
+	}
+
+	table {
+		width:290px;
+		font-size:12px;
+		margin:auto;
+		margin-top:20px;
+	}
+
+	.bottomNav li{
+		float:initial;
+	}
+
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+
+	.introContainer h1 {
+		font-size:40px;
+		width:100vw;
+		line-height:1;
+	}
+
+	.introContainer h2 {
+		font-size:30px;
+		width:100vw;
+		line-height:1;
+	}
+
+
+	.ConWrap {
+		grid-template-columns:1fr 1fr 0.1fr;
+		grid-template-rows: 0.2fr 1fr;
+		grid-gap:0em;
+		grid-template-areas: 
+			"main main main"
+			"con con lang";
+	}
+
+	.Logo {
+		margin:auto;
+		top:-230px;
+		left:-280px;
+		transform:scale(0.3);
+
+	}
+
+	.Title {
+		height:300px;
+		background-size:400%;
+		background-position:80% 20%;
+	}
+
+	.TiTag h1{
+		font-size:35px;
+	}
+
+	.TiTag h2{
+		font-size:20px;
+	}
+
+	.titleContainer {
+		width:390px;
+		left:170px;
+	}
+
+	.nav {
+		display:none;
+	}
+
+	.writeUp {
+		font-size:14px;
+		padding:10px 90px;
+		margin:10px 10px 10px 10px;
+	}
+
+	.langWrap {
+		font-size:10px;
+		margin-left:-10px;
+		padding-top:24px;
+	}
+
+	.langWrap a {
+		padding:0px;
+	}
+
+	#Eng {
+		padding-right:4px;
+	}
+
+	.intextTwitter {
+		display:block;
+	}
+
+	.intextTwitter .twitter-timeline {
+		max-width:200px;
+		max-height:280px;
+	}
+
+
+	table {
+		margin:auto;
+		font-size:12px;
+		width:350px;
+		margin:20px;
+	}
+
+		.bottomNav li{
+		float:initial;
+	}
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 920px) {
+	.introContainer h1 {
+		font-size:55px;
+		width:700px;
+		line-height:1;
+		top:30%;
+	}
+
+	.introContainer h2 {
+		font-size:45px;
+		width:600px;
+		line-height:1;
+		top:40%;
+	}
+
+	button {
+		top:40vh;
+	}
+
+
+	.ConWrap {
+		grid-template-columns:1fr 1fr 1fr 0.2fr;
+		grid-template-rows: 0.3fr 1fr;
+		grid-gap:0em;
+		grid-template-areas: 
+			"main main main main"
+			"con con con lang";
+	}
+
+	.Logo {
+		margin:auto;
+		top:-220px;
+		left:-250px;
+	}
+
+	.titleContainer {
+		width:500px;
+	}
+
+	.Title {
+		height:400px;
+		background-size:400%;
+		background-position:80% 20%;
+	}
+
+
+	.TiTag h1{
+		font-size:45px;
+
+	}
+
+	.TiTag h2{
+		font-size:25px;
+	}
+
+	.nav {
+		display:none;
+	}
+
+	.writeUp {
+		font-size:18px;
+		padding:10px;
+		margin:20px 100px 20px 100px;
+	}
+
+	.langWrap {
+		font-size:14px;
+		margin-left:-10px;
+		padding-top:24px;
+	}
+
+	.langWrap a {
+		padding:0px;
+	}
+
+	#Eng {
+		padding-right:4px;
+	}
+
+	.intextTwitter {
+		display:block;
+	}
+
+	.intextTwitter .twitter-timeline {
+		max-width:200px;
+		max-height:280px;
+	}
+
+	table {
+		margin:auto;
+		font-size:12px;
+		width:400px;
+		margin-top:20px;
+	}
+
+}
+
+@media only screen and (min-width: 921px) and (max-width: 991px) {
+	.introContainer h1 {
+		font-size:55px;
+		width:850px;
+		line-height:1.3;
+	}
+
+	.introContainer h2 {
+		font-size:45px;
+		width:600px;
+		line-height:1.3;
+	}
+
+}
+
+@media only screen and (min-width: 921px) and (max-width: 1200px) {
+
+	.nav {
+		display:none;
+	}
+
+	.intextTwitter {
+		display:block;
+	}
+
+	.intextTwitter .twitter-timeline {
+		max-width:200px;
+		max-height:200px;
+	}
+
+	.titleContainer{
+		top:150px;
+	}
+
+	.Logo {
+		top:-180px;
+	}
+}
+
+@media only screen and (min-width: 921px) and (max-width: 1273px) {
+	table {
+		margin:auto;
+		font-size:12px;
+		width:400px;
+		margin-top:20px;
+		margin-bottom:20px;
+	}
+
+
+}
+
+@media only screen and (min-width: 1280px) {
+	.intextTwitter {
+		display:none;
+	}
+	
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1499px) {
+	.Title {
+		background-size:200%;
+	}
+	
+}
+
+
+
+@media only screen and (min-width: 1500px) {
+
+	.ConWrap {
+		grid-gap:6em;
+	}
+
+
+	.Logo {
+		transform:scale(0.5);
+		top:-150px;
+		left:-70px;
+	}
+
+	.Title {
+		background-size:300%;
+		height:600px;
+	}
+
+	.titleContainer {
+		width:800px;
+		left:400px;
+		top:170px;
+	}
+
+	.TiTag h1{
+		font-size:4.5rem;
+
+	}
+
+	.TiTag h2{
+		font-size:2.5rem;
+	}
+
+	.writeUp {
+		font-size:25px;
+	}
+
+	table {
+		margin-top:28px;
+		margin-bottom:28px;
+		width:1000px;
+		font-size:20px;
+	}
+
+	caption {
+		font-size:25px;
+	}
+
+	.intextTwitter {
+		display:none;
+	}
+
+}
+
+

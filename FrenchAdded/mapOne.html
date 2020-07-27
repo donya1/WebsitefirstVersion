@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>By-Laws</title>
+    <link rel="shortcut icon" href="Styles/Home/Images/icon.svg">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="MapResearch.css">
+    <style>
+
+      #map {
+        width: 100%;
+        position:absolute;
+        top:40px;
+        left:0px;
+        height:80%;
+      }
+
+      .mapboxgl-popup {
+        font: sans-serif;
+        font-size:11px;
+      }
+
+      .mapboxgl-popup h3{
+        font-weight:700;
+        font-size:1.2em;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="current" href="Research.html">Research</a></li>
+        <li><a href="OurTeam.html">Our Team</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+      <ul class="lang">
+        <li><a href="#" language='english' class='active' id="Eng">EN</a></li>
+        <li><a href="#" language='french'>FR</a></li>
+      </ul>
+    </nav>
+ 
+
+      <div id='map'></div>
+   <div class="content">
+      <div class= "caption"><h2 class="capTitle1">NEO-VAGRANCY BY-LAWS ACROSS CANADA: </h2><p id='capDes'> The number and location of by-laws that contain a neo-vagrancy offence(s) are mapped. Zoom in and out to explore location, by-law and offences. In addition, two provincial laws are included/counted as one point, with each one containing the offence type of ‘panhandling’.</p></div>
+
+    <div class="mapMenu">
+      <h1 class="MapMen">Viewing Options</h1>
+      <ul>
+        <li><a class="current" href="mapOne.html" id="map1">By-Laws</a></li>
+        <li><a href="mapTwo.html" id="map2">Offence Types</a></li>
+        <li><a href="mapThree.html" id="map3">Offence Distribution</a></li>
+      </ul>
+    </div>
+    <div class="writeUp">
+
+    	<h2 class="title">Neo-Vagrancy Laws In Canada</h2>
+    	<h3 class="subtitle" id="sub1">No Standing, No Resting, No Shelter</h3>
+
+
+      <p class="par" id="par1">Anti-homeless laws pose a very real threat to people experiencing homelessness during the pandemic. One widespread form of anti-homeless legislation is what we have documented as neo-vagrancy law.</p>
+
+      <p class="par" id="par2">Vagrancy prohibitions have a 700 year-old history in English criminal law. Vagrancy offences were designed to target anyone whose simple presence was perceived as a threat to the prevailing social and economic order. In particular, people who were visibly poor and could not give a ‘good account’ of themselves were arrested as criminals.</p>
+
+      <p class="par" id="par3">Vagrancy law has been complicit with some of the most violent expressions of racism. Racial profiling and ‘stop and search’ practices were a central feature of  vagrancy law enforcement. Black and Asian Canadians, Indigenous Peoples, queer and trans individuals, and sex workers - all were major targets of vagrancy law before most of the offences were repealed from Canada’s Criminal Code by the early 1970’s.</p>
+
+      <p class="par" id="par4">In the last 30 years, there has been a revival of vagrancy type laws directed at people who are homeless and street involved. New or revised laws have been enacted across Canada targeting the presence and survival activities of homeless people in public spaces.</p>
+
+      <p class="par" id="par5">We call these laws neo-vagrancy laws because they revive a key purpose of archaic vagrancy law: to punish people who are visibly poor and have no choice but to spend their time in public spaces.</p>
+
+      <p class="par" id="par6">These laws are profoundly prejudicial given how minority communities (such as Indigenous Peoples) are over-represented in homeless populations.</p>
+
+      <h3 class="subtitle" id="sub2">75% of Canadians live in a jurisdiction with a Neo-Vagrancy Offence. </h3>
+
+      <p class="par" id="par7">Our mapping of neo-vagrancy laws in Canada is drawn primarily from the by-laws of municipalities. Current by-laws are posted on municipality websites for ‘research’ or ‘convenience’ purposes, with the proviso that they may contain errors or may not be up to date. Please <a href="Contact.html">contact us</a> to report additions or corrections. In addition, Ontario and British Columbia both have province wide Safe Streets Act legislation that target panhandling. Each of these provincial laws are included/counted as one point on the map, with each one containing the offence type of ‘panhandling’.</p>
+
+      <p class="par" id="par8">We have adhered to the following criteria in developing each neo-vagrancy offence type. </p>
+
+      <h3 class="subtitle" id="sub3">Panhandling <span class="span">('soliciting')</span></h3>
+
+      <p class="par" id="par9">The map includes anti-panhandling and anti-begging laws. These laws prohibit soliciting money or something of value from pedestrians. Some of the laws completely prohibit panhandling, while others partially restrict it during certain times (i.e. after 5pm), in certain places (i.e. in a park), or along with certain behaviours (i.e. while sitting). Regardless of how narrowly they are written, we consider all panhandling by-laws to be discriminatory for two reasons: 1) they directly target an activity associated with homelessness and poverty, 2) pedestrians often give money to people perceived as being visibly needy in public space, even if that person is not actively soliciting donations.</p>
+
+      <p class="par" id="par10">Also, while they are sometimes used against homeless people, we do not include laws whose purpose is to regulate activities that have a commercial aspect such as touting, trading, hawking, vending, peddling or busking. As well, we do not include soliciting carried out on a roadway, or a permitted or registered charity.</p>
+
+      <h3 class="subtitle" id="sub4">Loitering</h3>
+
+      <p class="par" id="par11">All by-laws that explicitly prohibit loitering are included in the map. The prohibition on loitering is sometimes specifically against ‘lingering’ or standing around somewhere ‘without an apparent purpose’; in other cases, loitering is restricted to certain times and places (i.e. after sunset, inside parks). We have included all loitering prohibitions not just because they are very subjective, but also because any homeless person surviving in public space would automatically be a target of the law.</p>
+
+      <h3 class="subtitle" id="sub5">Obstructing</h3>
+
+      <p class="par" id="par12">Obstructing by-laws are a close cousin of loitering by-laws. They are very generally defined as bothering a pedestrian’s right to passage. While they are more specific than loitering by-laws, sometimes these laws are written in a way that is so vague and subjective that they could target homeless people who live in and survive in public space. We included these by-laws on the map. Obstructing offences can also be used to indirectly target people who are homeless by claiming that their personal possessions (such as a sleeping bag) pose a hazard to the public. </p>
+
+      <h3 class="subtitle" id="sub6">Salvaging <span class="span">('scavenging')</span></h3>
+
+      <p class="par" id="par13">Salvaging by-laws prohibit homeless people from ‘picking-over’ and collecting from re-cycling and refuse containers for personal use – to find edible food or to collect bottles and cans that have recycling value.</p>
+
+      <p class="par" id="par14">We do not include by-laws that prohibit scavenging as an organized commercial activity, or those that interfere with waste disposal sites. </p>
+
+      <h3 class="subtitle" id="sub7">Resting and Sleeping</h3>
+
+      <p class="par" id="par15">This category overlaps with both loitering and obstructing by-laws, but these laws are distinct because they specifically target the bodies of homeless people that are resting (sitting, reclining or sleeping) in public spaces. These by-laws can be general anti-sleeping prohibitions in all public spaces or can restrict sitting and sleeping in specific places (on street furniture or grassy areas). Along with loitering and obstruction by-laws, they can work to exclude the very simple presence of homeless people altogether from public spaces. </p>
+
+      <h3 class="subtitle" id="sub8">Sheltering</h3>
+
+      <p class="par" id="par16">By-laws regulating camping or erecting materials like tents, tarps or other covers in public space are categorized as sheltering by-laws. They emphasize some sort of shelter or place-making. Some of these by-laws allow narrow exceptions for homeless people, but still restrict times and places where people can set up shelters, effectively banning building shelter for more than a very short period of time (usually from sunset to sunrise).</p>
+
+      <p class="par" id="par17">We do not include by-laws that regulate recreational camping in municipal parks that have organized campgrounds with permitted sites. Nor do we include general prohibitions involving entry into park spaces.</p>
+
+      <h3 class="subtitle" id="sub9">Disorder</h3>
+
+      <p class="par" id="par18">These by-laws prohibit vaguely-defined behaviours that provide a means to target anyone that a member of the public may find to be undesirable. Often these by-laws characterize certain kinds of conduct as a form of ‘nuisance’, using extremely general language about ‘annoying’, ‘offending’ or ‘being objectionable to’ others. They are so general and vague that they provide a legal means to anyone to complain about street-involved people in public spaces.</p>
+
+      <p class="par" id="par19">We do not include general anti-nuisance by-laws that specifically prohibit harassment or violent behaviour in public spaces.</p>
+
+      <p class="par" id="par20">We conclude on an important point: neo-vagrancy laws are a specific set of anti-homeless laws that reproduce aspects of repealed vagrancy law. They do not include a wide range of other laws that are often used against people experiencing homelessness such as alcohol or trespass laws. Indeed, as we will explore in upcoming research, they are only one feature of a legal landscape that punishes people who are homeless and attempts to drive them out of public spaces.</p>
+
+      <p class="authors">Joe Hermer and Elliot Fonarev</p>
+      <p class="date">July 12, 2020</p>
+
+      <p class="notes" id="notes1">This work is protected under a Creative Commons license that allows you to share, copy, distribute, and transmit the work for non-commercial purposes, provided you attribute it to the original source.</p>
+
+      <p class="notes" id="notes2">This essay may be cited as:</p>
+	  <p class="notes" id="notes3">Hermer, J., & Fonarev, E. (2020, July 12). Neo-Vagrancy Laws in Canada. Retrieved from: http://covid19-phi.ca/</p>
+
+
+<h3>Bibliography<button class="biblioExpand"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></button></h3>
+	  <div class="bibliography">
+	  	
+	  	<p>Bellot, C., & Sylvestre, M. (2017). La judiciarisation de l’itinérance à Montréal : les dérives 
+		sécuritaires de la gestion pénale de la pauvreté. <span class="jouTit">Revue générale de droit</span>, 47: 11–44.</p>
+
+		<p>Bellot, C., Raffestin, I., Royer, M., & Noël, V. (2005). Judiciarisation et criminalisation des 
+		populations itinérantes à Montréal. <span class="jouTit">Rapport de recherche préparé pour le Secrétariat
+		National des Sans– abri</span>, octobre 2005, p. 27–28.</p>
+
+		<p>Bernier, D., Bellot, C., Sylvestre, M., & Chesnay, C. (2011). La judiciarisation des personnes en 
+		situation d’itinérance à Québec : point de vue des acteurs socio-judiciaires et analyse du phénomène. <span class="jouTit">Revue générale de droit</span>, 47: 11-44.</p> 
+
+		<p>Blackmon, D. (2009). <span class="jouTit">Slavery by Another Name: The Re-Enslavement of black Americans from 
+		the Civil War to World War II.</span> New York: Anchor Books.</p> 
+
+		<p>Bouclin, S. (2015). Identifying Pathways to and Experiences of Street Involvement through Case 
+		Law. <span class="jouTit">Dalhousie Law Journal</span>, 38(2): 345-383.</p> 
+
+		<p>Boivin, R., & Billette, I. (2012). Police et itinérance à Montréal : analyse des constats 
+		d’infraction aux règlements municipaux, 2005-2009. <span class="jouTit">Crime et jeux de hasard</span>, 45(2): 249-276.</p>
+
+    <p>Canadian Civil Liberties Association, Policing the Pandemic Mapping Project. <span class="jouTit">Stay off the Grass: COVID-19 and Law Enforcement in Canada</span>, June 2020. https://ccla.org/cclanewsite/wp-content/uploads/2020/06/2020-06-24-Stay-Off-the-Grass-COVID19-and-Law-Enforcement-in-Canada1.pdf</p>
+
+		<p>Campbell, M., & Eid, P. (2009). La judiciarisation des personnes itinérantes à Montréal : un 
+		profilage social. <span class="jouTit">Commission des droits de la personne et des droits de la jeunesse</span>, cat. 2.120-8.61.</p>
+
+		<p>Chesnay, C., Bellot, C., & Sylvestre, M. (2013). Taming Disorderly People One Ticket at a 
+		Time: The Penalization of Homelessness in Ontario and British Columbia. <span class="jouTit">Canadian Journal of Criminology and Criminal Justice</span>, 55(22): 161-185.</p>
+
+		<p>Collins, D., & Blomley, N. (2003). Private Needs and Public Space: Politics, Poverty, and Anti-
+		Panhandling By-Laws in Canadian Cities. In Law Commission of Canada, (Eds.), <span class="jouTit">New Perspectives on the Public-Private Divide</span> (pp. 40-67). Vancouver, BC: UBC Press.</p>
+
+		<p>European Federation of National Organisations Working with the Homeless. (2020, Spring). The 
+		Criminalisation of Homelessness. <span class="jouTit">Homeless in Europe</span>. Retrieved from: https://www.feantsa.org/public/user/Resources/magazine/2020/Homeless_in_Europe_Magazine_Spring2020_Criminalisation_of_homelessness.pdf</p>
+
+		<p>Fortin, V. (2018). Le contrôle des espaces publics à Montréal, à l’ère de la justice managériale. 
+		<span class="jouTit">Penal Field</span>, 15: https://doi.org/10.4000/champpenal.10115</p>
+
+		<p>Gaetz, S., O’Grady, B., Buccieri, K., Karabanow, J., & Marsolais, A. (2013). Governing the 
+		Streets: The Legal, Social, and Moral Regulation of Homeless Youth. In Homeless Hub (Eds.), <span class="jouTit">Youth Homelessness in Canada: Implications for Policy and Practice</span>. Toronto, ON: Canadian Homelessness Research Network Press.</p>
+
+		<p>Gaetz, S., O’Grady, B., Buccieri, K., Karabanow, J., & Marsolais, A. (2013). Policing Street 
+		Youth in Toronto. In Homeless Hub (Eds.), <span class="jouTit">Youth Homelessness in Canada: Implications for Policy and Practice</span>. Toronto, ON: Canadian Homelessness Research Network Press.</p>
+
+		<p>Hall, S., Critcher, C., Jefferson, T., Clarke, J., & Roberts, B. (1978). <span class="jouTit">Policing the crisis: 
+		mugging, the state, and law and order</span>. London, England: Macmillan Press.</p>
+
+		<p>Hermer, J. (2019). <span class="jouTit">Policing Compassion: Begging, law and power in public space</span>. Oxford: Hart 
+		Publishing.</p> 
+
+		<p>Hermer, J. (2020, February 2). Thomas Parker and the tragedy of Vagrancy Law. Retrieved 
+		from: https://www.crisis.org.uk/about-us/the-crisis-blog/thomas-parker-and-the-tragedy-of-vagrancy-law/</p>
+
+		<p>Hermer, J., & Mosher, J. (2002). <span class="jouTit">Disorderly People: Law and the politics of exclusion in 
+		Ontario</span>. Halifax: Fernwood Publishing.</p> 
+
+		<p>Johnsen, S., Fitpatrick, S., & Watts, B. (2018). Homelessness and social control: a typology. 
+		<span class="jouTit">Housing Studies</span>, 33(7): 1106-1126.</p> 
+
+    <p>McClelland, A., Luscombe, A. (2020). "Policing the Pandemic: Tracking the Policing of COVID-19 Across Canada", https://doi.org/10.5683/SP2/KNJLWS, <span class="jouTit">Scholars Portal Dataverse</span>.</p>
+
+		<p>Morris, N. (2019). <span class="jouTit">Scrap the Act: The case for repealing the Vagrancy Act (1824)</span>. London: 
+		Crisis.</p>
+
+		<p>O’Grady, B., Gaetz, S., & Buccieri, K. (2011). <span class="jouTit">Can I see your I.D.? The policing of youth 
+		homelessness in Toronto</span>. Retrieved from: https://www.homelesshub.ca/CanISeeYourID</p>
+
+		<p>Ranasinghe, P. (2012). Vagrancy as a penal problem: the logistics of administering punishment 
+		in late-nineteenth-century Canada. <span class="jouTit">Journal of Historical Sociology</span>, 25(4): 531-551.</p>
+
+		<p>Ranasinghe, P. (2015). Refashioning vagrancy: a tale of law’s narrative of its imagination. 
+		<span class="jouTit">International Journal of Law in Context</span>, 2(3): 320-340.</p> 
+
+		<p>Statistics Canada. (2016). <span class="jouTit">Population and dwelling count highlight tables, 2016 census: 
+		population and dwelling counts, for Canada, provinces and territories, and census 
+		subdivisions (municipalities), 2016 and 2011 censuses</span>. Retrieved June 25, 2020 from: https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/hlt-fst/pd-pl/List-prov-terr.cfm?Lang=Eng&T=302&S=86&O=A</p>
+
+		<p>Sylvestre, M., & Bellot, C. (2014). Challenging discriminatory and punitive responses to 
+		homelessness in Canada. <span class="jouTit">Advancing Social Rights in Canada, Irwin Law</span>. Retrieved from: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2484975</p>
+
+		<p>Sylvestre, M., Bellot, C., Ménard, P., & Tremblay, A. (2013). Le droit est aussi une question de 
+		visibilité : 2 occupation des espaces publics et parcours judiciaires des personnes 
+		itinérantes à Montréal et à Ottawa. <span class="jouTit">Cambridge University Press</span>, 26(3): 531-561.</p>
+
+		<p>The National Law Center on Homelessness & Poverty and The National Coalition for the 
+		Homeless. (2009). <span class="jouTit">Homes not handcuffs: The criminalization of homelessness in U.S. cities</span>. Retrieved from: https://nationalhomeless.org/wpcontent/uploads/2013/11/CrimzReport_2009.pdf</p>
+
+		<p>The National Law Center on Homelessness & Poverty and The National Coalition for the 
+		Homeless. (2006). <span class="jouTit">A dream denied: The criminalization of homelessness in U.S. cities</span>. Retrieved from: https://nationalhomeless.org/wp-content/uploads/2014/06/CrimzReport2006.pdf</p>
+
+		<p>Quirouette, M. (2016). Conflict with the Law: Regulation & Homeless Youth Trajectories 
+		toward Stability. <span class="jouTit">Canadian Journal of Law and Society</span>, 31(03): 383-404.</p> 
+
+		<p>Waldron, J. (1991). Homelessness and the Issue of Freedom. <span class="jouTit">UCLA Law Review</span>, 39(1): 295-
+		324.</p> 
+
+	</div>
+
+    </div>
+
+        <footer>
+      <hr>
+
+      <div class=bottomNav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Research.html">Research</a></li>
+          <li><a href="OurTeam.html">Our Team</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+    
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="MapScriptOne.js"></script>
+
+
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZG9ueWFhYSIsImEiOiJja2FmcHVzMjUwMHl1MnJyOGJjZ3d1ZDN2In0.Xpcbdw2ReubEMhFvbYn_7w'; // replace this with your access token
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/light-v10', // replace this with your style URL
+      center: [-104.750596, 58.585901],
+      zoom: 2.8
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
+
+    map.on('load', () => {
+      map.addSource('Laws' ,{
+        'type': 'geojson',
+        'data': 'https://donya1.github.io/WebsitefirstVersion/GeojsonData/FinalDataAllOffencesLongLatFixed.geojson',
+        'cluster': true,
+        'clusterMaxZoom': 14,
+        'clusterRadius':100
+      });
+
+      map.addLayer({
+        'id':'clusters',
+        'type':'circle',
+        'source':'Laws',
+        'filter':['has', 'point_count'],
+        'paint': {
+          'circle-color':[
+            'step',
+            ['get', 'point_count'],
+            '#8c6bb1',
+            5,
+            '#88419d',
+            20,
+            '#810f7c'
+          ],
+          'circle-radius':[
+            'step',
+            ['get', 'point_count'],
+            20,
+            5,
+            30,
+            20,
+            40
+          ]
+        }
+      });
+
+      map.addLayer({
+        'id':'cluster-count',
+        'type':'symbol',
+        'source':'Laws',
+        'filter':['has', 'point_count'],
+        'layout': {
+            'text-field': '{point_count_abbreviated}',
+            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+            'text-size': 14,
+        },
+        'paint': {
+          'text-color': 'white',
+        }
+      });
+
+      map.addLayer({
+        'id':'unclustered-point',
+        'type':'circle',
+        'source':'Laws',
+        'filter': ['!', ['has', 'point_count']],
+        'paint': {
+          'circle-color': '#8c6bb1',
+          'circle-radius':6
+        }
+      });
+
+      //inspect a cluster on click
+      map.on('click', 'clusters', function(e) {
+        var features = map.queryRenderedFeatures(e.point, {
+          layers: ['clusters']
+        });
+        var clusterId = features[0].properties.cluster_id;
+        map.getSource('Laws').getClusterExpansionZoom(
+          clusterId,
+          function(err, zoom) {
+            if (err) return;
+
+            map.easeTo({
+              center: features[0].geometry.coordinates,
+              zoom:zoom
+            });
+
+          });
+      });
+
+      //when click on a unclustered-point, open pop-up at the location of feature with HTML description from its properties
+      map.on('click', 'unclustered-point', function(e){
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var City = e.features[0].properties.City;
+        var OT = e.features[0].properties.OffenceType;
+        var Law = e.features[0].properties.LawName;
+
+      while (Math.abs(e.lngLat.lng - coordinates [0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+
+      new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(coordinates)
+        .setHTML('<h3>' + City + '</h3><h4>' +Law + '</h4><p>' + 'Offence Type: ' + OT + '</p>')
+        .addTo(map);
+    });
+
+      map.on('mouseenter', 'clusters', function() {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+      map.on('mouseleave', 'clusters', function(){
+        map.getCanvas().style.cursor = '';
+      });
+
+      map.on('mouseenter', 'unclustered-point', function() {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+      map.on('mouseleave', 'unclustered-point', function(){
+        map.getCanvas().style.cursor = '';
+      });
+
+    });
+    </script>
+  </body>
+</html>
